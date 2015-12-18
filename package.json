@@ -1,6 +1,6 @@
 {
   "name": "jupyter-lightsaber",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Jupyter extension that adds a lightsaber to your page.",
   "main": "lib/index.js",
   "scripts": {
