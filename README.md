@@ -1,4 +1,2 @@
 # jupyter-lightsaber
-An extension that allows you to filter by filename in the Jupyter notebook file tree (aka dashboard) page.
-
-![Demo](demo.gif)# jupyter-lightsaber
+An extension that adds a light saber to your notebook
