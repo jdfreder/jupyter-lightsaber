@@ -311,6 +311,10 @@ div {
 `;
 
 
+let plasmaResolve;
+let plasmaPromise = new Promise(res => plasmaResolve = res);
+let plasmaStyleName = 'obi-wan';
+
 function createSaber(el) {
     var Howl = require('howler').Howl;
 	var onSound = new Howl({
@@ -331,7 +335,7 @@ function createSaber(el) {
     let saberSwitch = document.createElement('div');
     saberSwitch.className = 'switch';
     let plasma = document.createElement('div');
-    plasma.className = 'plasma obi-wan';
+    plasma.className = 'plasma ' + plasmaStyleName;
     
     saber.appendChild(label);
     saber.appendChild(box);
@@ -346,6 +350,8 @@ function createSaber(el) {
             offSound.play();	
         }
     };
+	
+	plasmaResolve(plasma);
 }
 
 export function load_ipython_extension() {
@@ -355,5 +361,13 @@ export function load_ipython_extension() {
 
     createSaber(document.querySelector('#notebook'));
 
+}
+
+export function changeSaberStyle(styleName) {
+	return plasmaPromise.then(plasma => {
+		plasma.classList.remove(plasmaStyleName);
+		plasmaStyleName = styleName;
+		plasma.classList.add(plasmaStyleName);
+	});
 }
 
