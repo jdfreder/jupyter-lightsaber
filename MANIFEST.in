@@ -1,2 +1,2 @@
-graft jupyter-tree-filter
+graft jupyter-lightsaber
 include package.json
