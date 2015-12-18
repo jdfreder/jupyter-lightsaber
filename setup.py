@@ -9,7 +9,7 @@ setup(name=npm_package['name'],
       description=npm_package['description'],
       author=npm_package['author'],
       author_email='jon.freder@gmail.com',
-      url=npm_package['repository']['url'],
+      url=npm_package['homepage'],
       packages=['jupyter-lightsaber'],
       include_package_data=True,
      )
